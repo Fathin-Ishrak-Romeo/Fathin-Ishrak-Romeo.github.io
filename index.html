@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fathin Ishrak — Portfolio & CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0e0e0e;
+      --text-color: #e6e6e6;
+      --accent-color: #00aaff;
+      --card-bg: #111;
+      --border-color: #333;
+    }
+
+    [data-theme='light'] {
+      --bg-color: #f9f9f9;
+      --text-color: #222;
+      --accent-color: #007acc;
+      --card-bg: #fff;
+      --border-color: #ddd;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--card-bg);
+      border-right: 1px solid var(--border-color);
+      width: 340px;
+      padding: 2rem 1.5rem 5rem;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .profile-section {
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-color);
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    .sidebar h1 {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      margin: 0.5rem 0;
+    }
+
+    .sidebar p.bio {
+      color: var(--text-color);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar ul.links {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .sidebar ul.links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .sidebar ul.links a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .sidebar ul.links a:hover {
+      color: var(--accent-color);
+    }
+
+    .button {
+      display: block;
+      text-align: center;
+      border: 1px solid var(--accent-color);
+      padding: 0.6rem 1rem;
+      border-radius: 0.4rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+    }
+
+    .credits {
+      font-size: 0.8rem;
+      color: #777;
+      text-align: left;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 340px;
+      padding: 2rem 3rem;
+      flex: 1;
+      max-width: calc(100% - 340px);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+    }
+
+    section h2 {
+      border-left: 4px solid var(--accent-color);
+      padding-left: 0.6rem;
+      font-size: 1.3rem;
+      color: var(--accent-color);
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Theme toggle switch */
+    .switch {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      width: 50px;
+      height: 26px;
+      background-color: var(--border-color);
+      border-radius: 26px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .switch::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    body[data-theme='light'] .switch::after {
+      transform: translateX(24px);
+      background-color: var(--accent-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: relative;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .main {
+        margin-left: 0;
+        padding: 1.5rem;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="switch" id="theme-toggle"></div>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile-section">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>Fathin Ishrak</h1>
+        <p class="bio">Computer Science & Engineering student passionate about AI, robotics, and embedded systems.</p>
+        <ul class="links">
+          <li>📍 Dhaka, Bangladesh</li>
+          <li>✉️ <a href="mailto:fathin.ishrak7@gmail.com">fathin.ishrak7@gmail.com</a></li>
+          <li>💻 <a href="https://github.com/Fathin-Ishrak-Romeo">GitHub</a></li>
+          <li>🔗 <a href="https://www.linkedin.com/in/fathin-ishrak/">LinkedIn</a></li>
+        </ul>
+        <a href="Fathin_Ishrak_CV.pdf" download="Fathin_Ishrak_CV.pdf" class="button">⬇️ Download CV</a>
+      </div>
+      <div class="credits">© 2025 Fathin Ishrak — Built with ⚡ and hosted on GitHub Pages.</div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <section>
+        <h2>Career Objective</h2>
+        <p>Motivated and enthusiastic Computer Science and Engineering graduate with a solid foundation in problem-solving, seeking a challenging position to leverage and further develop technical skills. Committed to delivering effective solutions and contributing to organizational growth while advancing my professional career.</p>
+      </section>
+
+      <section>
+        <h2>Educational Qualification</h2>
+        <ul>
+          <li><b>B.Sc. in Computer Science & Engineering (CSE), 2025</b><br>BRAC University — CGPA: 3.30</li>
+          <li><b>H.S.C. in Science, 2019</b><br>Birshreshtha Munshi Abdur Rouf Public College — GPA: 4.33</li>
+          <li><b>S.S.C. in Science, 2017</b><br>Patuakhali Govt. Jubilee High School — GPA: 5.00</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li><b>Programming:</b> HTML, SQL, C, C++, CSS, Python</li>
+          <li><b>Assembly:</b> x86 Assembly, RISC-V</li>
+          <li><b>Version Control:</b> Git, GitHub</li>
+          <li><b>Software Engineering:</b> Waterfall, Agile, DevOps, MVC, SDLC, Testing</li>
+          <li><b>OS:</b> Windows, Linux</li>
+          <li><b>AI:</b> Machine Learning, Neural Networks</li>
+          <li><b>Robotics & IoT:</b> Arduino, ESP, STM, Raspberry Pi, ROS</li>
+          <li><b>Others:</b> VLSI Design, Quantum Computing</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Research Interests</h2>
+        <p><b>Recent Research:</b> Multi-Level Deep Generative Model with Poisson VAEs and RL for Intrusion Detection System.</p>
+        <p><b>Other Interests:</b> Robotics & IoT, Embedded Systems, VLSI, Quantum Computing, QML, AI, ML, Deep Learning, Neural Networks, Cybersecurity.</p>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <h3>Research Projects</h3>
+        <ul>
+          <li><b>Multi-Level Deep Generative Model with Poisson VAEs & RL for IDS</b> — Hierarchical intrusion detection with Poisson VAEs, PPO, XGBoost. <a href="https://github.com/Fathin-Ishrak-Romeo/Multi-Level-Deep-Generative-Model-with-PVAE-and-RL-for-Enhanced-IDS.git">GitHub</a></li>
+          <li><b>FIR-DEC: Deep Embedding Clustering using CNN Autoencoders</b> — DEC-style clustering model in PyTorch. <a href="https://github.com/Fathin-Ishrak-Romeo/FIR-DEC_Deep-Embedding-Clustering-Model-Using-Convolutional-Autoencoders-on-MNIST-Digits-Dataset.git">GitHub</a></li>
+        </ul>
+        <h3>Software Projects</h3>
+        <ul>
+          <li><b>PCGenixAI</b> — AI-based PC Builder Web App using React, TypeScript, Node.js, Supabase. <a href="https://github.com/Fathin-Ishrak-Romeo/PCGenixAI.git">GitHub</a></li>
+          <li><b>BuX</b> — Full-stack Laravel e-learning platform with quizzes & dashboards. <a href="https://github.com/Fathin-Ishrak-Romeo/CSE470_PROJECT_Online-Learning-Platform_BuX.git">GitHub</a></li>
+          <li><b>Nearby Expertise</b> — Service provider finder (PHP, MySQL). <a href="https://github.com/Fathin-Ishrak-Romeo/CSE370-Project-Website_Nearby-Expertise.git">GitHub</a></li>
+          <li><b>Digital Food Ordering System</b> — x86 Assembly program for restaurant orders. <a href="https://github.com/Fathin-Ishrak-Romeo/CSE341-Project_Digital-food-ordering-system-at-a-restaurant-using-x86-Assembly-Language.git">GitHub</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme');
+      if (currentTheme === 'light') {
+        document.body.setAttribute('data-theme', 'dark');
+      } else {
+        document.body.setAttribute('data-theme', 'light');
+      }
+    });
+
+    document.body.setAttribute('data-theme', 'dark');
+  </script>
+</body>
+</html>
