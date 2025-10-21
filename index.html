@@ -38,6 +38,7 @@
       -webkit-font-smoothing:antialiased;
     }
 
+    /* link color */
     a { color: var(--link-color); text-decoration: none; transition: color 0.25s ease; }
     a:hover { color: var(--accent-color); }
 
@@ -82,9 +83,18 @@
       flex: 1;
       max-width: calc(100% - 300px);
       position: relative;
-      line-height: 1.75; /* desktop reading */
+
+      /* readability */
+      line-height: 1.85; /* increased for breathing room */
       text-align: justify; /* even right edge on desktop */
-      hyphens: auto;
+      text-justify: inter-word;
+
+      /* prevent breaking words unexpectedly */
+      hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+      -webkit-hyphens: none;
+      -ms-word-break: normal;
     }
 
     section { margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 1rem; }
@@ -113,11 +123,25 @@
       .links li { font-size: 0.95rem; }
       .button { font-size:0.72rem; padding:0.28rem 0.5rem; }
 
-      /* Main should fit the mobile width and NOT justify text (justify often causes ugly gaps on narrow screens) */
-      .main { margin-left: 0; padding: 1.2rem; max-width: 100%; text-align: left; line-height: 1.6; hyphens: none; }
+      /* Make the main area fit mobile width and aim for even right edge without breaking words */
+      .main {
+        margin-left: 0;
+        padding: 1rem 1rem 2rem 1rem;
+        max-width: 100%;
+
+        /* try to keep even right edge while avoiding hyphenation & word-breaks */
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: none;
+        word-break: normal;
+        overflow-wrap: anywhere; /* allows long words to wrap if necessary but prefers not to */
+
+        /* slightly smaller line-height so spacing looks natural on narrow screens */
+        line-height: 1.6;
+      }
 
       /* Theme switch: keep it visible and fixed to the viewport top-right for easy access */
-      .theme-switch-container { position: fixed; top: 10px; right: 12px; font-size: 1.1rem; }
+      .theme-switch-container { position: fixed; top: 10px; right: 12px; font-size: 1.15rem; }
 
       /* ensure headings & lists have comfortable spacing on mobile */
       section { margin-bottom: 1.2rem; padding-bottom: 0.8rem; }
