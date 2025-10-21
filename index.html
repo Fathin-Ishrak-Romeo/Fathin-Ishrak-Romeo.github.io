@@ -10,16 +10,18 @@
       --bg-color: #0e0e0e;
       --text-color: #e6e6e6;
       --accent-color: #00aaff;
-      --card-bg: #111;
-      --border-color: #333;
+      --link-color: #87cefa; /* Softer sky blue */
+      --card-bg: transparent;
+      --border-color: transparent;
     }
 
     [data-theme='light'] {
       --bg-color: #f9f9f9;
       --text-color: #222;
       --accent-color: #007acc;
-      --card-bg: #fff;
-      --border-color: #ddd;
+      --link-color: #3399ff;
+      --card-bg: transparent;
+      --border-color: transparent;
     }
 
     body {
@@ -33,6 +35,17 @@
       justify-content: center;
     }
 
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
     .container {
       display: flex;
       flex-direction: row;
@@ -42,16 +55,14 @@
     }
 
     .sidebar {
-      background: var(--card-bg);
-      border-right: 1px solid var(--border-color);
       width: 280px;
-      padding: 1.2rem 1rem 2rem;
+      padding: 1.5rem;
       position: fixed;
       top: 0;
       bottom: 0;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       text-align: center;
     }
@@ -96,11 +107,6 @@
       color: var(--accent-color);
     }
 
-    .links a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-
     .button {
       display: inline-block;
       border: 1px solid var(--accent-color);
@@ -115,7 +121,6 @@
     .button:hover {
       background: var(--accent-color);
       color: var(--bg-color);
-      text-decoration: none;
     }
 
     .main {
@@ -128,7 +133,7 @@
 
     section {
       margin-bottom: 2rem;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid #333;
       padding-bottom: 1rem;
     }
 
@@ -149,7 +154,7 @@
       color: #777;
       text-align: center;
       padding: 1.5rem 0 1rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid #333;
     }
 
     .theme-switch-container {
@@ -185,9 +190,10 @@
       .sidebar {
         position: relative;
         width: 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
+        border: none;
         padding: 1.5rem 0.5rem;
+        justify-content: center;
+        align-items: center;
       }
       .main {
         margin-left: 0;
@@ -211,10 +217,8 @@
       <ul class="links">
         <li>📍 Dhaka, Bangladesh</li>
         <li>✉️ <a href="mailto:fathin.ishrak7@gmail.com">fathin.ishrak7@gmail.com</a></li>
-        <p>
-          <a href="https://github.com/Fathin-Ishrak-Romeo">GitHub</a> |
-          <a href="https://www.linkedin.com/in/fathin-ishrak/">LinkedIn</a>
-        </p>
+        <li>💻 <a href="https://github.com/Fathin-Ishrak-Romeo">GitHub</a></li>
+        <li>🔗 <a href="https://www.linkedin.com/in/fathin-ishrak/">LinkedIn</a></li>
       </ul>
       <a href="Fathin_Ishrak_CV.pdf" download="Fathin_Ishrak_CV.pdf" class="button">⬇️ Download CV</a>
     </aside>
@@ -222,7 +226,6 @@
     <main class="main">
       <div class="theme-switch-container" id="theme-toggle">🌙<span>Theme Change</span></div>
 
-      <!-- Right side CV content -->
       <section>
         <h2>Career Objective</h2>
         <p>Motivated and enthusiastic Computer Science and Engineering graduate with a solid foundation in problem-solving, seeking a challenging position to leverage and further develop technical skills. Committed to delivering effective solutions and contributing to organizational growth while advancing my professional career.</p>
