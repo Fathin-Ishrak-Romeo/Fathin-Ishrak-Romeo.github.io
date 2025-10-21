@@ -38,7 +38,6 @@
       -webkit-font-smoothing:antialiased;
     }
 
-    /* link color */
     a { color: var(--link-color); text-decoration: none; transition: color 0.25s ease; }
     a:hover { color: var(--accent-color); }
 
@@ -50,7 +49,6 @@
       min-height: 100vh;
     }
 
-    /* SIDEBAR */
     .sidebar {
       width: 280px;
       padding: 1.5rem;
@@ -59,8 +57,8 @@
       bottom: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* vertically center */
-      align-items: center; /* horizontally center */
+      justify-content: center;
+      align-items: center;
       text-align: center;
       background: transparent;
     }
@@ -76,25 +74,14 @@
     .button { display:inline-block; border:1px solid var(--accent-color); padding:0.3rem 0.6rem; border-radius:0.32rem; color:var(--accent-color); text-decoration:none; font-size:0.78rem; }
     .button:hover { background:var(--accent-color); color:var(--bg-color); text-decoration:none; }
 
-    /* MAIN (right) */
     .main {
       margin-left: 300px;
       padding: 2rem 3rem;
       flex: 1;
       max-width: calc(100% - 300px);
       position: relative;
-
-      /* readability */
-      line-height: 1.85; /* increased for breathing room */
-      text-align: justify; /* even right edge on desktop */
-      text-justify: inter-word;
-
-      /* prevent breaking words unexpectedly */
-      hyphens: none;
-      word-break: normal;
-      overflow-wrap: normal;
-      -webkit-hyphens: none;
-      -ms-word-break: normal;
+      line-height: 1.85;
+      text-align: left; /* Changed from justify to left for natural spacing */
     }
 
     section { margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 1rem; }
@@ -104,52 +91,22 @@
 
     footer { font-size:0.82rem; color:#777; text-align:center; padding:1.2rem 0 1rem; border-top:1px solid rgba(255,255,255,0.06); }
 
-    /* Theme switch: always fixed top-right of the right segment */
     .theme-switch-container { position: fixed; top: 18px; right: calc( (100% - min(1200px, 90%)) / 2 + 20px ); z-index: 400; font-size: 1.35rem; cursor: pointer; text-align:center; }
-    /* Explanation: right = page-center offset + 20px so it sits at the right edge of the content area on wide screens */
-
     .theme-switch-container span { display:block; font-size:0.76rem; margin-top:4px; color:var(--accent-color); }
 
-    /* RESPONSIVE: mobile adjustments */
     @media (max-width: 900px) {
       body { justify-content: flex-start; }
       .container { flex-direction: column; width: 100%; }
-
-      /* Sidebar becomes top block, centered and not fixed */
       .sidebar { position: relative; width: 100%; padding: 1.2rem 0.75rem; top: auto; bottom: auto; }
       .profile-pic { width: 92px; height: 92px; }
       .sidebar h1 { font-size: 1.05rem; }
       .sidebar p.bio { font-size: 0.85rem; }
       .links li { font-size: 0.95rem; }
       .button { font-size:0.72rem; padding:0.28rem 0.5rem; }
-
-      /* Make the main area fit mobile width and aim for even right edge without breaking words */
-      .main {
-        margin-left: 0;
-        padding: 1rem 1rem 2rem 1rem;
-        max-width: 100%;
-
-        /* try to keep even right edge while avoiding hyphenation & word-breaks */
-        text-align: justify;
-        text-justify: inter-word;
-        hyphens: none;
-        word-break: normal;
-        overflow-wrap: anywhere; /* allows long words to wrap if necessary but prefers not to */
-
-        /* slightly smaller line-height so spacing looks natural on narrow screens */
-        line-height: 1.6;
-      }
-
-      /* Theme switch: keep it visible and fixed to the viewport top-right for easy access */
+      .main { margin-left: 0; padding: 1rem; max-width: 100%; text-align: left; line-height: 1.6; }
       .theme-switch-container { position: fixed; top: 10px; right: 12px; font-size: 1.15rem; }
-
-      /* ensure headings & lists have comfortable spacing on mobile */
-      section { margin-bottom: 1.2rem; padding-bottom: 0.8rem; }
-      section h2 { font-size: 1.05rem; margin-bottom: 0.5rem; }
-      section ul { line-height: 1.6; }
     }
 
-    /* small tweaks for very narrow screens */
     @media (max-width: 420px) {
       .profile-pic { width: 80px; height: 80px; }
       .sidebar h1 { font-size: 1rem; }
@@ -160,7 +117,7 @@
 <body>
   <div class="container">
     <aside class="sidebar">
-      <img src="i.jpg" alt="Profile Picture" class="profile-pic">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
       <h1>Fathin Ishrak</h1>
       <p class="bio">Computer Science & Engineering graduate passionate about AI, robotics, and embedded systems.</p>
       <ul class="links">
@@ -176,7 +133,6 @@
 
     <main class="main">
       <div class="theme-switch-container" id="theme-toggle">🌙<span>Change Theme</span></div>
-
       <section>
         <h2>Career Objective</h2>
         <p>Motivated and enthusiastic Computer Science and Engineering graduate with a solid foundation in problem-solving, seeking a challenging position to leverage and further develop technical skills. Committed to delivering effective solutions and contributing to organizational growth while advancing my professional career.</p>
@@ -251,7 +207,6 @@
 
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
-
     toggleBtn.addEventListener('click', () => {
       const currentTheme = document.body.getAttribute('data-theme');
       if (currentTheme === 'light') {
@@ -262,7 +217,6 @@
         toggleBtn.innerHTML = '☀️<span>Change Theme</span>';
       }
     });
-
     document.body.setAttribute('data-theme', 'dark');
   </script>
 </body>
