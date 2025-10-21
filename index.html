@@ -10,7 +10,7 @@
       --bg-color: #0e0e0e;
       --text-color: #e6e6e6;
       --accent-color: #00aaff;
-      --link-color: #87cefa; /* Softer sky blue */
+      --link-color: #87cefa;
       --card-bg: transparent;
       --border-color: transparent;
     }
@@ -43,7 +43,6 @@
 
     a:hover {
       color: var(--accent-color);
-      text-decoration: none;
     }
 
     .container {
@@ -85,7 +84,7 @@
     .sidebar p.bio {
       font-size: 0.85rem;
       margin-bottom: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .links {
@@ -129,6 +128,8 @@
       flex: 1;
       max-width: calc(100% - 300px);
       position: relative;
+      line-height: 1.75; /* Added for better readability */
+      text-align: justify; /* Makes the right edge even */
     }
 
     section {
@@ -147,6 +148,11 @@
       font-size: 1.2rem;
       color: var(--accent-color);
       font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    section ul {
+      line-height: 1.8;
     }
 
     footer {
@@ -199,6 +205,7 @@
         margin-left: 0;
         padding: 1.5rem;
         max-width: 100%;
+        text-align: left;
       }
       .theme-switch-container {
         top: 10px;
@@ -295,7 +302,7 @@
       </section>
 
       <footer>
-        © 2025 Fathin Ishrak — Built with and hosted on GitHub Pages.
+        © 2025 Fathin Ishrak — Built with ⚡ and hosted on GitHub Pages.
       </footer>
     </main>
   </div>
@@ -307,10 +314,10 @@
       const currentTheme = document.body.getAttribute('data-theme');
       if (currentTheme === 'light') {
         document.body.setAttribute('data-theme', 'dark');
-        toggleBtn.innerHTML = '🌙<span>Theme Change</span>';
+        toggleBtn.innerHTML = '🌙<span>Change Theme</span>';
       } else {
         document.body.setAttribute('data-theme', 'light');
-        toggleBtn.innerHTML = '☀️<span>Theme Change</span>';
+        toggleBtn.innerHTML = '☀️<span>Change Theme</span>';
       }
     });
 
