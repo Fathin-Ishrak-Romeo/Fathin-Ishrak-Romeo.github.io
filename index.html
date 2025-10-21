@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fathin Ishrak — Portfolio & CV</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #0e0e0e;
@@ -24,102 +24,92 @@
 
     body {
       font-family: 'Inter', sans-serif;
+      font-size: 15px;
       margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
     }
 
     .container {
       display: flex;
       flex-direction: row;
+      width: 90%;
+      max-width: 1200px;
       min-height: 100vh;
     }
 
     .sidebar {
       background: var(--card-bg);
       border-right: 1px solid var(--border-color);
-      width: 340px;
-      padding: 2rem 1.5rem 3rem;
+      width: 280px;
+      padding: 1.2rem 1rem 2rem;
       position: fixed;
       top: 0;
       bottom: 0;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-    }
-
-    .profile-section {
+      align-items: center;
       text-align: center;
     }
 
     .profile-pic {
-      width: 140px;
-      height: 140px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--accent-color);
-      display: block;
-      margin: 0 auto 1rem;
-    }
-
-    .sidebar h1 {
-      font-size: 1.5rem;
-      color: var(--accent-color);
-      margin: 0.5rem 0;
-    }
-
-    .sidebar p.bio {
-      color: var(--text-color);
-      font-size: 0.9rem;
       margin-bottom: 1rem;
     }
 
-    .sidebar ul.links {
+    .sidebar h1 {
+      font-size: 1.3rem;
+      color: var(--accent-color);
+      margin-bottom: 0.4rem;
+    }
+
+    .sidebar p.bio {
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .links {
       list-style: none;
       padding: 0;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-      text-align: left;
+      margin: 0 0 1rem 0;
+      text-align: center;
     }
 
-    .sidebar ul.links li {
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-color);
-      opacity: 0.8;
-      transition: all 0.3s ease;
+    .links li {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      transition: 0.3s;
     }
 
-    .sidebar ul.links li:hover {
+    .links li:hover {
       opacity: 1;
       color: var(--accent-color);
     }
 
-    .sidebar ul.links a {
-      color: var(--accent-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .sidebar ul.links a:hover {
+    .links a {
       color: var(--accent-color);
       text-decoration: none;
     }
 
     .button {
-      display: block;
-      text-align: center;
+      display: inline-block;
       border: 1px solid var(--accent-color);
-      padding: 0.6rem 1rem;
-      border-radius: 0.4rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 0.3rem;
       color: var(--accent-color);
       text-decoration: none;
-      font-weight: 500;
-      margin-top: 1.5rem;
-      transition: all 0.2s ease;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
     }
 
     .button:hover {
@@ -129,17 +119,17 @@
     }
 
     .main {
-      margin-left: 360px;
-      padding: 2rem 4rem;
+      margin-left: 300px;
+      padding: 2rem 3rem;
       flex: 1;
-      max-width: calc(100% - 360px);
+      max-width: calc(100% - 300px);
       position: relative;
     }
 
     section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       border-bottom: 1px solid var(--border-color);
-      padding-bottom: 1.5rem;
+      padding-bottom: 1rem;
     }
 
     section:last-of-type {
@@ -149,24 +139,16 @@
     section h2 {
       border-left: 4px solid var(--accent-color);
       padding-left: 0.6rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: var(--accent-color);
-    }
-
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      font-weight: 600;
     }
 
     footer {
       font-size: 0.8rem;
       color: #777;
       text-align: center;
-      padding: 2rem 0 1rem;
+      padding: 1.5rem 0 1rem;
       border-top: 1px solid var(--border-color);
     }
 
@@ -174,48 +156,38 @@
       position: fixed;
       top: 20px;
       right: 30px;
-      text-align: center;
-      color: var(--accent-color);
-      font-size: 0.9rem;
-      z-index: 100;
-    }
-
-    .switch {
-      position: relative;
-      width: 50px;
-      height: 26px;
-      background-color: var(--border-color);
-      border-radius: 26px;
+      z-index: 200;
+      font-size: 1.4rem;
       cursor: pointer;
-      transition: background-color 0.3s;
-      margin: 0 auto 4px;
+      transition: transform 0.3s ease;
+      text-align: center;
     }
 
-    .switch::after {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 20px;
-      height: 20px;
-      background-color: var(--accent-color);
-      border-radius: 50%;
-      transition: transform 0.3s;
+    .theme-switch-container span {
+      display: block;
+      font-size: 0.75rem;
+      margin-top: 4px;
+      color: var(--accent-color);
     }
 
-    body[data-theme='light'] .switch::after {
-      transform: translateX(24px);
+    .theme-switch-container:hover {
+      transform: scale(1.1);
     }
 
     @media (max-width: 900px) {
+      body {
+        justify-content: flex-start;
+      }
       .container {
         flex-direction: column;
+        width: 100%;
       }
       .sidebar {
         position: relative;
         width: 100%;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
+        padding: 1.5rem 0.5rem;
       }
       .main {
         margin-left: 0;
@@ -223,10 +195,9 @@
         max-width: 100%;
       }
       .theme-switch-container {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin-bottom: 1rem;
+        top: 10px;
+        right: 15px;
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -234,27 +205,22 @@
 <body>
   <div class="container">
     <aside class="sidebar">
-      <div class="profile-section">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-        <h1>Fathin Ishrak</h1>
-        <p class="bio">Computer Science & Engineering graduate passionate about AI, robotics, and embedded systems.</p>
-        <ul class="links">
-          <li>📍 <span>Dhaka, Bangladesh</span></li>
-          <li>📩 <a href="mailto:fathin.ishrak7@gmail.com">fathin.ishrak7@gmail.com</a></li>
-          <p>
-            <a href="https://github.com/Fathin-Ishrak-Romeo">GitHub</a> |
-            <a href="https://www.linkedin.com/in/fathin-ishrak/">LinkedIn</a>
-          </p>
-        </ul>
-        <a href="Fathin_Ishrak_CV.pdf" download="Fathin_Ishrak_CV.pdf" class="button">⬇️ Download CV</a>
-      </div>
+      <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+      <h1>Fathin Ishrak</h1>
+      <p class="bio">Computer Science & Engineering graduate passionate about AI, robotics, and embedded systems.</p>
+      <ul class="links">
+        <li>📍 Dhaka, Bangladesh</li>
+        <li>✉️ <a href="mailto:fathin.ishrak7@gmail.com">fathin.ishrak7@gmail.com</a></li>
+        <p>
+          <a href="https://github.com/Fathin-Ishrak-Romeo">GitHub</a> |
+          <a href="https://www.linkedin.com/in/fathin-ishrak/">LinkedIn</a>
+        </p>
+      </ul>
+      <a href="Fathin_Ishrak_CV.pdf" download="Fathin_Ishrak_CV.pdf" class="button">⬇️ Download CV</a>
     </aside>
 
     <main class="main">
-      <div class="theme-switch-container">
-        <div class="switch" id="theme-toggle"></div>
-        <div>Change Theme</div>
-      </div>
+      <div class="theme-switch-container" id="theme-toggle">🌙<span>Theme Change</span></div>
 
       <!-- Right side CV content -->
       <section>
@@ -315,16 +281,16 @@
 
         <h3>Hardware Projects</h3>
         <ul>
-          <li><b>Mars Rover Prototype</b><br>ESP32-CAM & Arduino-based rover featuring pan‑tilt camera control, autonomous & manual navigation, a 4‑DOF robotic arm for soil sampling, an onboard weather station, and a custom web app interface for controlling. <a href="https://github.com/Fathin-Ishrak-Romeo/Mars-Rover-Prototype.git">GitHub Link</a></li>
-          <li><b>Sensor-based Student Authentication & Cheating Detection System</b><br>Arduino-based cost‑efficient smart‑desk prototype with RFID-based access and exam‑monitoring sensors to detect unauthorized phone use and students looking around during tests. <a href="https://github.com/Fathin-Ishrak-Romeo/Sensor-based-Access-Authentication-and-Cheating-Detection-System-during-exam-using-Arduino.git">GitHub Link</a></li>
+          <li><b>Mars Rover Prototype</b><br>ESP32-CAM & Arduino-based rover featuring pan-tilt camera control, autonomous & manual navigation, a 4-DOF robotic arm for soil sampling, an onboard weather station, and a custom web app interface for controlling. <a href="https://github.com/Fathin-Ishrak-Romeo/Mars-Rover-Prototype.git">GitHub Link</a></li>
+          <li><b>Sensor-based Student Authentication & Cheating Detection System</b><br>Arduino-based cost-efficient smart-desk prototype with RFID-based access and exam-monitoring sensors to detect unauthorized phone use and students looking around during tests. <a href="https://github.com/Fathin-Ishrak-Romeo/Sensor-based-Access-Authentication-and-Cheating-Detection-System-during-exam-using-Arduino.git">GitHub Link</a></li>
           <li><b>Obstacle Avoiding Car</b><br>Autonomous Arduino-based obstacle avoiding car. <a href="https://github.com/Fathin-Ishrak-Romeo/Hardware-Project_Obstacle-Avoiding-Car-using-Arduino.git">GitHub Link</a></li>
-          <li><b>Automatic Water Pump System</b><br>An automatic water pump using ICs and MOSFETs, which activates when water falls below a defined threshold and deactivates once a preset level is exceeded, with integrated LED indicators for real‑time water‑level monitoring.</li>
-          <li><b>Automatic Blind Turn Traffic Management System</b><br>An automatic traffic‑management system using logic‑gate ICs to monitor blind turns on hilly roads; activating red indicators for oncoming traffic and green LEDs when the road is clear and safe to pass.</li>
+          <li><b>Automatic Water Pump System</b><br>An automatic water pump using ICs and MOSFETs, which activates when water falls below a defined threshold and deactivates once a preset level is exceeded, with integrated LED indicators for real-time water-level monitoring.</li>
+          <li><b>Automatic Blind Turn Traffic Management System</b><br>An automatic traffic-management system using logic-gate ICs to monitor blind turns on hilly roads; activating red indicators for oncoming traffic and green LEDs when the road is clear and safe to pass.</li>
         </ul>
       </section>
 
       <footer>
-        © 2025 Fathin Ishrak — Built with ⚡ and hosted on GitHub Pages.
+        © 2025 Fathin Ishrak — Built with and hosted on GitHub Pages.
       </footer>
     </main>
   </div>
@@ -336,8 +302,10 @@
       const currentTheme = document.body.getAttribute('data-theme');
       if (currentTheme === 'light') {
         document.body.setAttribute('data-theme', 'dark');
+        toggleBtn.innerHTML = '🌙<span>Theme Change</span>';
       } else {
         document.body.setAttribute('data-theme', 'light');
+        toggleBtn.innerHTML = '☀️<span>Theme Change</span>';
       }
     });
 
