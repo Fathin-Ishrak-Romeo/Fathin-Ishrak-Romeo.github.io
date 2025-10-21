@@ -6,6 +6,8 @@
   <title>Fathin Ishrak — Portfolio & CV</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
     :root {
       --bg-color: #0e0e0e;
       --text-color: #e6e6e6;
@@ -33,17 +35,11 @@
       transition: all 0.3s ease;
       display: flex;
       justify-content: center;
+      -webkit-font-smoothing:antialiased;
     }
 
-    a {
-      color: var(--link-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--accent-color);
-    }
+    a { color: var(--link-color); text-decoration: none; transition: color 0.25s ease; }
+    a:hover { color: var(--accent-color); }
 
     .container {
       display: flex;
@@ -53,6 +49,7 @@
       min-height: 100vh;
     }
 
+    /* SIDEBAR */
     .sidebar {
       width: 280px;
       padding: 1.5rem;
@@ -61,157 +58,78 @@
       bottom: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: center; /* vertically center */
+      align-items: center; /* horizontally center */
       text-align: center;
+      background: transparent;
     }
 
-    .profile-pic {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent-color);
-      margin-bottom: 1rem;
-    }
+    .profile-pic { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color); margin-bottom: 1rem; }
+    .sidebar h1 { font-size: 1.3rem; color: var(--accent-color); margin: 0 0 0.4rem; }
+    .sidebar p.bio { font-size: 0.88rem; margin: 0 0 1rem; line-height: 1.6; }
 
-    .sidebar h1 {
-      font-size: 1.3rem;
-      color: var(--accent-color);
-      margin-bottom: 0.4rem;
-    }
+    .links { list-style: none; padding: 0; margin: 0 0 1rem 0; text-align: center; }
+    .links li { margin: 0.4rem 0; font-size: 0.95rem; opacity: 0.95; transition: 0.2s; }
+    .links li:hover { opacity: 1; color: var(--accent-color); }
 
-    .sidebar p.bio {
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
+    .button { display:inline-block; border:1px solid var(--accent-color); padding:0.3rem 0.6rem; border-radius:0.32rem; color:var(--accent-color); text-decoration:none; font-size:0.78rem; }
+    .button:hover { background:var(--accent-color); color:var(--bg-color); text-decoration:none; }
 
-    .links {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem 0;
-      text-align: center;
-    }
-
-    .links li {
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
-      opacity: 0.9;
-      transition: 0.3s;
-    }
-
-    .links li:hover {
-      opacity: 1;
-      color: var(--accent-color);
-    }
-
-    .button {
-      display: inline-block;
-      border: 1px solid var(--accent-color);
-      padding: 0.35rem 0.7rem;
-      border-radius: 0.3rem;
-      color: var(--accent-color);
-      text-decoration: none;
-      font-size: 0.8rem;
-      transition: all 0.3s ease;
-    }
-
-    .button:hover {
-      background: var(--accent-color);
-      color: var(--bg-color);
-    }
-
+    /* MAIN (right) */
     .main {
       margin-left: 300px;
       padding: 2rem 3rem;
       flex: 1;
       max-width: calc(100% - 300px);
       position: relative;
-      line-height: 1.75; /* Added for better readability */
-      text-align: justify; /* Makes the right edge even */
+      line-height: 1.75; /* desktop reading */
+      text-align: justify; /* even right edge on desktop */
+      hyphens: auto;
     }
 
-    section {
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: 1rem;
-    }
+    section { margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 1rem; }
+    section:last-of-type { border-bottom: none; }
+    section h2 { border-left: 4px solid var(--accent-color); padding-left: 0.6rem; font-size: 1.2rem; color: var(--accent-color); font-weight:600; margin-bottom:0.8rem; }
+    section ul { line-height: 1.9; }
 
-    section:last-of-type {
-      border-bottom: none;
-    }
+    footer { font-size:0.82rem; color:#777; text-align:center; padding:1.2rem 0 1rem; border-top:1px solid rgba(255,255,255,0.06); }
 
-    section h2 {
-      border-left: 4px solid var(--accent-color);
-      padding-left: 0.6rem;
-      font-size: 1.2rem;
-      color: var(--accent-color);
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-    }
+    /* Theme switch: always fixed top-right of the right segment */
+    .theme-switch-container { position: fixed; top: 18px; right: calc( (100% - min(1200px, 90%)) / 2 + 20px ); z-index: 400; font-size: 1.35rem; cursor: pointer; text-align:center; }
+    /* Explanation: right = page-center offset + 20px so it sits at the right edge of the content area on wide screens */
 
-    section ul {
-      line-height: 1.8;
-    }
+    .theme-switch-container span { display:block; font-size:0.76rem; margin-top:4px; color:var(--accent-color); }
 
-    footer {
-      font-size: 0.8rem;
-      color: #777;
-      text-align: center;
-      padding: 1.5rem 0 1rem;
-      border-top: 1px solid #333;
-    }
-
-    .theme-switch-container {
-      position: fixed;
-      top: 20px;
-      right: 30px;
-      z-index: 200;
-      font-size: 1.4rem;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-
-    .theme-switch-container span {
-      display: block;
-      font-size: 0.75rem;
-      margin-top: 4px;
-      color: var(--accent-color);
-    }
-
-    .theme-switch-container:hover {
-      transform: scale(1.1);
-    }
-
+    /* RESPONSIVE: mobile adjustments */
     @media (max-width: 900px) {
-      body {
-        justify-content: flex-start;
-      }
-      .container {
-        flex-direction: column;
-        width: 100%;
-      }
-      .sidebar {
-        position: relative;
-        width: 100%;
-        border: none;
-        padding: 1.5rem 0.5rem;
-        justify-content: center;
-        align-items: center;
-      }
-      .main {
-        margin-left: 0;
-        padding: 1.5rem;
-        max-width: 100%;
-        text-align: left;
-      }
-      .theme-switch-container {
-        top: 10px;
-        right: 15px;
-        font-size: 1.3rem;
-      }
+      body { justify-content: flex-start; }
+      .container { flex-direction: column; width: 100%; }
+
+      /* Sidebar becomes top block, centered and not fixed */
+      .sidebar { position: relative; width: 100%; padding: 1.2rem 0.75rem; top: auto; bottom: auto; }
+      .profile-pic { width: 92px; height: 92px; }
+      .sidebar h1 { font-size: 1.05rem; }
+      .sidebar p.bio { font-size: 0.85rem; }
+      .links li { font-size: 0.95rem; }
+      .button { font-size:0.72rem; padding:0.28rem 0.5rem; }
+
+      /* Main should fit the mobile width and NOT justify text (justify often causes ugly gaps on narrow screens) */
+      .main { margin-left: 0; padding: 1.2rem; max-width: 100%; text-align: left; line-height: 1.6; hyphens: none; }
+
+      /* Theme switch: keep it visible and fixed to the viewport top-right for easy access */
+      .theme-switch-container { position: fixed; top: 10px; right: 12px; font-size: 1.1rem; }
+
+      /* ensure headings & lists have comfortable spacing on mobile */
+      section { margin-bottom: 1.2rem; padding-bottom: 0.8rem; }
+      section h2 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+      section ul { line-height: 1.6; }
+    }
+
+    /* small tweaks for very narrow screens */
+    @media (max-width: 420px) {
+      .profile-pic { width: 80px; height: 80px; }
+      .sidebar h1 { font-size: 1rem; }
+      .theme-switch-container { right: 8px; }
     }
   </style>
 </head>
@@ -302,7 +220,7 @@
       </section>
 
       <footer>
-        © 2025 Fathin Ishrak — Built with ⚡ and hosted on GitHub Pages.
+        © 2025 Fathin Ishrak — Built with and hosted on GitHub Pages.
       </footer>
     </main>
   </div>
