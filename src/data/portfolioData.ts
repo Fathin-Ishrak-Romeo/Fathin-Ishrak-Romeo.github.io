@@ -383,7 +383,7 @@ export const projectsList: Project[] = [
     title: 'Automatic Water Pump System',
     subtitle: 'CSE251: Electronic Devices and Circuits | Group Project (2 members)',
     category: 'Digital Logic Design',
-    githubUrl:,
+    githubUrl: '',
     description:
       'Built an automatic water pump system using logic gate ICs and MOSFETs (without microcontrollers) that automatically activates when the water level drops below a threshold and shuts off when it exceeds a set limit, with LED indicators displaying real-time water levels.',
     tags: ['7400 Series ICs', 'MOSFETs', 'Analog Circuit', 'Automation'],
@@ -393,7 +393,7 @@ export const projectsList: Project[] = [
     title: 'Automatic Blind Turn Traffic Management System',
     subtitle: 'CSE260: Digital Logic Design | Group Project (4 members)',
     category: 'Digital Logic Design',
-    githubUrl:,
+    githubUrl: '',
     description:
       'Designed an automatic traffic management system using logic gate ICs (without microcontrollers) for blind turns on hilly roads. The system detects approaching vehicles and activates red indicators on the opposite side to warn incoming traffic, while green LEDs signal when the road is clear and safe to pass.',
     tags: ['7400 Series ICs', 'Logic Gate', 'Sensors', 'Safety Systems'],

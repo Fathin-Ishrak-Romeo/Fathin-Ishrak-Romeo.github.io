@@ -184,7 +184,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
             </div>
           </div>
           <div className="hover:bg-slate-50 dark:hover:bg-slate-800/50 p-1 rounded-xl transition-all duration-200 hover:scale-105 cursor-default">
-            <div className="text-xl font-extrabold text-slate-900 dark:text-white">
+            <div className="text-xl font-extrabold text-emerald-600 dark:text-emerald-400">
               {profile.stats.startup}
             </div>
             <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 font-medium">
@@ -192,7 +192,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
             </div>
           </div>
           <div className="hover:bg-slate-50 dark:hover:bg-slate-800/50 p-1 rounded-xl transition-all duration-200 hover:scale-105 cursor-default">
-            <div className="text-xl font-extrabold text-slate-900 dark:text-white">
+            <div className="text-xl font-extrabold text-purple-600 dark:text-purple-400">
               {profile.stats.skillSets}
             </div>
             <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 font-medium">
