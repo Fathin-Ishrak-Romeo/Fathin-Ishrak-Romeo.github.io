@@ -15,7 +15,7 @@ export const profileData: ProfileInfo = {
   },
   venture: {
     name: 'RoboKit Garage',
-    description: 'Profitable robotics startup delivering intelligent IoT solutions, robotic kits, and custom engineering projects.',
+    description: 'Profitable robotics startup delivering intelligent IoT solutions, robotic kits, components and custom engineering projects.',
     socials: [
       { name: 'Facebook', url: 'https://www.facebook.com/people/RoboKit-Garage/61577943424925/#', color: 'facebook' },
       { name: 'Instagram', url: 'https://www.instagram.com/robokit.garage', color: 'instagram' },
@@ -98,7 +98,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'prog-lang',
     name: 'Programming Languages',
-    skills: ['HTML', 'SQL', 'C', 'C++', 'Python'],
+    skills: ['Python', 'HTML', 'C', 'C++', 'SQL'],
   },
   {
     id: 'assembly-lang',
@@ -113,17 +113,12 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'software-eng',
     name: 'Software Engineering',
-    skills: ['Waterfall', 'V-Model', 'Incremental & Iterative', 'Agile', 'DevOps', 'MVC', 'Peer-to-Peer', 'SDLC', 'Testing'],
-  },
-  {
-    id: 'operating-sys',
-    name: 'Operating Systems',
-    skills: ['Windows', 'Linux'],
+    skills: ['SDLC', 'Agile', 'DevOps', 'MVC Architecture', 'Waterfall', 'V-Model', 'Incremental & Iterative Models', 'Testing'],
   },
   {
     id: 'artificial-intel',
     name: 'Artificial Intelligence',
-    skills: ['Machine Learning', 'Neural Networks'],
+    skills: ['Machine Learning', 'Deep Learning', 'Neural Networks'],
   },
   {
     id: 'robotics-iot',
@@ -139,6 +134,11 @@ export const skillCategories: SkillCategory[] = [
     id: 'quantum-comp',
     name: 'Quantum Computing',
     skills: ['Quantum Computing'],
+  },
+  {
+    id: 'operating-sys',
+    name: 'Operating Systems',
+    skills: ['Windows', 'Linux'],
   },
 ];
 
@@ -173,15 +173,16 @@ export const projectsList: Project[] = [
     title: 'Multi-Level Deep Generative Model with Poisson Variational Autoencoders and Reinforcement Learning for Enhanced Intrusion Detection System',
     subtitle: 'Undergrad Thesis | Group Research (4 members)',
     category: 'Research',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Multi-Level-Deep-Generative-Model-with-PVAE-and-RL-for-Enhanced-IDS',
     description:
       'Developed a hierarchical intrusion-detection model using a three-level Poisson VAE chain (packet -> flow -> session) with normalizing flows, a PPO agent for per-sample ensemble weighting, and an XGBoost meta-learner to fuse predictions. Evaluated on NF-UQ-NIDS-v2 dataset, it achieved 89.17% multiclass accuracy and strong binary discrimination (98.11% AUROC).',
     tags: [
+      'IDS',
       'Poisson VAE',
       'Reinforcement Learning',
       'Normalizing Flow',
-      'XGBoost',
       'PPO Agent',
+      'XGBoost',
       'NF-UQ-NIDS-v2',
       'Cybersecurity',
     ],
@@ -191,13 +192,13 @@ export const projectsList: Project[] = [
     title: 'FIR-DEC: A Deep Embedding Clustering Model Using Convolutional Autoencoders on MNIST Dataset of Handwritten Digits',
     subtitle: 'CSE425: Neural Network | Solo Research',
     category: 'Research',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/FIR-DEC_Deep-Embedding-Clustering-Model-Using-Convolutional-Autoencoders-on-MNIST-Digits-Dataset',
     description:
       'Developed a deep-embedding clustering model that combines a convolutional autoencoder with a DEC-style clustering head (implemented in PyTorch) to learn cluster-discriminative representations on the MNIST handwritten-digit dataset. Jointly optimized reconstruction and KL clustering losses and achieved an adjusted Rand Index of ~0.62, substantially outperforming k-means baseline with improved silhouette and Davies-Bouldin scores.',
     tags: [
       'Convolutional Autoencoder',
       'DEC Clustering',
-      'MNIST handwritten-digit dataset',
+      'MNIST handwritten-digit',
       'PyTorch',
       'Deep Learning',
     ],
@@ -209,9 +210,9 @@ export const projectsList: Project[] = [
     title: 'PCGenixAI: AI-Powered PC Builder Web App',
     subtitle: 'CSE471: System Analysis and Design | Solo Project',
     category: 'Software & Web Development',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/PCGenixAI',
     description:
-      'An advanced version of my solo project PC Builder developed for my CSE471: System Analysis and Design course. Built an intelligent web platform for PC component shopping and AI-based custom PC build recommendations with user authentication, dynamic build generation, and smart filtering using React, TypeScript, Node.js, Express.js, and Supabase.',
+      'AI-based custom PC build recommendations and component shopping platform with user authentication, dynamic build generation, and smart filtering using React, TypeScript, Node.js, Express.js, and Supabase.',
     tags: ['React', 'TypeScript', 'Node.js', 'Express.js', 'Supabase', 'AI'],
   },
   {
@@ -219,9 +220,9 @@ export const projectsList: Project[] = [
     title: 'BuX : Online Learning Platform',
     subtitle: 'CSE470: Software Engineering | Group Project (3 members)',
     category: 'Software & Web Development',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/CSE470_PROJECT_Online-Learning-Platform_BuX',
     description:
-      'Full-stack Laravel e-learning website with instructor/student/admin roles, course/section/lecture management, quizzes, shopping-cart and payments, dashboards and progress tracking; built with Laravel (PHP), MySQL, Blade and Tailwind.',
+      'Full-stack Laravel e-learning website with roles (instructor, student & admin), management (course, section & lecture), quizzes, cart and payments, dashboards and progress tracking; built with Laravel (PHP), MySQL, Blade and Tailwind.',
     tags: ['Laravel', 'PHP', 'Blade', 'Tailwind CSS', 'MySQL'],
   },
   {
@@ -229,7 +230,7 @@ export const projectsList: Project[] = [
     title: 'Nearby Expertise: Service Provider Finder',
     subtitle: 'CSE370: Database Systems | Group Project (3 members)',
     category: 'Software & Web Development',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/CSE370-Project-Website_Nearby-Expertise',
     description:
       'Developed a web-based platform that connects users with nearby professionals (e.g., electricians, plumbers, carpenters) using PHP, HTML, CSS, and MySQL; features database-driven service listings, user authentication, and efficient data management for real-world applications.',
     tags: ['PHP', 'HTML', 'CSS3', 'MySQL'],
@@ -239,32 +240,32 @@ export const projectsList: Project[] = [
     title: 'Digital Food Ordering System (User Interface)',
     subtitle: 'CSE341: Microprocessor | Solo Project',
     category: 'Software & Web Development',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/CSE341-Project_Digital-food-ordering-system-at-a-restaurant-using-x86-Assembly-Language',
     description:
-      'Developed a digital food-ordering system in x86 Assembly which runs on EMU8086 emulator. The menu-driven program supports category browsing, item selection with quantity validation, and order processing, demonstrating low-level implementation of user interaction and basic order data handling.',
-    tags: ['x86 Assembly', 'EMU8086', 'Microprocessors'],
+      'Developed a digital food-ordering system in x86 Assembly that runs on the EMU8086 emulator. The menu-driven program supports category browsing, item selection with quantity validation, and order processing, demonstrating low-level implementation of user interaction and basic order data handling.',
+    tags: ['x86 Assembly', 'EMU8086', 'Microprocessors', 'Assembly Language'],
   },
 
   // 3. Game Development (2 projects)
   {
     id: 'proj-shoot-circles',
-    title: 'Shoot the Circles',
+    title: 'Shoot the Falling Circles',
     subtitle: 'CSE423: Computer Graphics | Solo Project',
     category: 'Game Development',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Project-Game_Shooting-the-falling-circles',
     description:
-      'Designed a game as a part of solo project for CSE423: Computer Graphics course using Pygame, where the main objective is to shoot the falling circle-shaped objects. The game can be over in 3 ways: if a falling circle touches the shooter directly, if a player misses 3 falling circles to shoot or if a player misfires 3 times.',
-    tags: ['Python', 'Pygame', 'Computer Graphics', 'Game Loop'],
+      'Designed a game using Pygame, where the main objective is to shoot the falling circle-shaped objects. The game can be over in 3 ways: if a falling circle touches the shooter directly, if a player misses 3 falling circles to shoot, or if a player misfires 3 times.',
+    tags: ['Pygame', '2D Physics', 'Computer Graphics', 'Game Loop'],
   },
   {
     id: 'proj-catch-diamonds',
-    title: 'Catch the Diamonds',
+    title: 'Catch the Falling Diamonds',
     subtitle: 'CSE423: Computer Graphics | Solo Project',
     category: 'Game Development',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Project-Game_Catch-the-falling-diamonds',
     description:
-      'This game was developed as a part of solo project for CSE423: Computer Graphics course using Pygame, with the main goal of catching falling diamonds. As the game progresses, the difficulty increases by speeding up the falling diamonds. If the player misses a diamond, the game ends.',
-    tags: ['Python', 'Pygame', '2D Physics', 'Computer Graphics', 'Collision Detection'],
+      'This game was developed using Pygame, with the main goal of catching falling diamonds. As the game progresses, the difficulty increases by speeding up the falling diamonds. If the player misses a diamond, the game ends.',
+    tags: ['Pygame', '2D Physics', 'Computer Graphics', 'Collision Detection'],
   },
 
   // 4. Robotics & IoT (8 projects)
@@ -273,9 +274,9 @@ export const projectsList: Project[] = [
     title: 'TESLA Prototype',
     subtitle: 'Hobby Project',
     category: 'Robotics & IoT',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/TESLA-Prototype-Voice-control-with-emergency-braking-Manual-control-and-RFID-based-door-security-',
     description:
-      'Developed a cost-efficient Tesla-inspired robotic car using Arduino UNO and ESP32-CAM with RFID security, manual & voice control, ultrasonic collision avoidance, emergency braking, and rearview camera support.',
+      'Developed a cost-efficient Tesla-inspired robotic car using Arduino UNO and ESP32-CAM with RFID security, manual & voice control, autonomous ultrasonic collision avoidance, autonomous emergency braking, and rearview camera support.',
     tags: [
       'Arduino UNO',
       'ESP32-CAM',
@@ -290,70 +291,70 @@ export const projectsList: Project[] = [
     title: 'Mars Rover Prototype',
     subtitle: 'CSE461: Introduction to Robotics | Solo Project',
     category: 'Robotics & IoT',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Mars-Rover-Prototype',
     description:
       'ESP32-CAM & Arduino-based rover featuring pan-tilt camera control, autonomous & manual navigation, a 4-DOF robotic arm for soil sampling, an onboard weather station, and a custom web app interface for controlling and real-time monitoring.',
-    tags: ['Arduino UNO', 'Arduino Nano', 'ESP32-CAM', '4-DOF Arm', 'Pan-Tilt Camera', 'IoT'],
+    tags: ['Arduino UNO', 'Arduino Nano', 'ESP32-CAM', '4-DOF Arm', 'Weather Station', 'Pan-Tilt Camera', 'IoT'],
   },
   {
     id: 'proj-cheating-detect',
     title: 'Sensor-based Student Authentication & Cheating Detection System during exam',
     subtitle: 'CSE360: Computer Interfacing | Solo Project',
     category: 'Robotics & IoT',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Sensor-based-Access-Authentication-and-Cheating-Detection-System-during-exam-using-Arduino',
     description:
-      'Arduino-based cost-efficient smart-desk prototype with RFID-based access and exam-monitoring sensors to detect unauthorized phone use and students looking around during tests.',
-    tags: ['Arduino UNO', 'RFID', 'Phone Detection', 'Photo Sensing', 'Cheating Prevention', 'Embedded'],
+      'Arduino-based cost-efficient smart-desk prototype with RFID-based access control and exam-monitoring sensors to detect unauthorized phone use and students looking around during tests.',
+    tags: ['Arduino UNO', 'RFID', 'Phone Detection', 'Photo Sensing', 'Cheating Prevention'],
   },
   {
     id: 'proj-soccer-bot',
-    title: 'Competition Ready Soccer Bot without requiring a Transmitter',
+    title: 'Competition-Ready Soccer Bot without Requiring a Transmitter',
     subtitle: 'Hobby Project',
     category: 'Robotics & IoT',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Soccer_Bot_for_Competition_without_any_Transmitter',
     description:
       'Developed an ESP32-based soccer bot featuring Android app control via Bluetooth connection, adjustable speed modes, and high-torque DC gear motors for fast and precise gameplay. Designed as a low-cost alternative to traditional radio-controlled systems.',
-    tags: ['ESP32', 'Bluetooth', 'Android App', 'High Torque Gear Motor', 'No Transmitter', 'Cost-efficient'],
+    tags: ['ESP32', 'Bluetooth Connectivity', 'Android App', 'High Torque Gear Motor', 'No Transmitter', 'Cost-efficient'],
   },
   {
     id: 'proj-surveillance-bot',
     title: 'WiFi Controlled Surveillance Robot with Pan-Tilt Camera Control using ESP32 Cam Module',
     subtitle: 'Hobby Project',
     category: 'Robotics & IoT',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/WiFi-Controlled-Surveillance-Robot-with-Pan-Tilt-Camera-Control-using-ESP32-Cam-Module',
     description:
-      "Developed a cost-efficient robot car with a pan-tilt camera that can be controlled from any browser, devices, with smooth controls and views, via the ESP32-CAM's integrated WiFi. A built-in web server provides seamless control with live video streaming directly to the interface, making it ideal for vertical and horizontal rotation for full coverage, while adjustable lighting and speed control ensure seamless real-time viewing and remote operations. The system is secured with password-protected WiFi to restrict access to authorized users.",
+      "Developed a WiFi-enabled ESP32-CAM robot car with browser-based cross-platform control, live video streaming, 180° pan-tilt surveillance, adjustable lighting, and secure password-protected remote access. Beyond security, it’s suitable for remote inspections, education, research, smart home monitoring, and exploring hard-to-reach or hazardous areas.",
     tags: ['ESP32-CAM', 'Web Server', 'Real-time Video Streaming', 'Pan-Tilt', 'WiFi Control'],
   },
   {
     id: 'proj-lfr-90deg',
-    title: 'Dual IR Array LFR capable of making 90° Turn without PID Algorithm',
+    title: 'Dual IR Array LFR capable of making 90° Turns without PID Algorithm',
     subtitle: 'Hobby Project',
     category: 'Robotics & IoT',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Dual-IR-Array-LFR-capable-of-making-90-Turn-without-PID-Algorithm',
     description:
       'Developed a high-speed autonomous line-following robot using dual IR sensor arrays. Implemented PID-free adaptive turning logic, 90° pivot turns, line-loss recovery, speed ramping, and counter-pulse braking for precise and stable track navigation.',
-    tags: ['Arduino', 'IR Sensor Array', 'PID-free Control', '90° Turning Ability', 'Autonomous Robotics'],
+    tags: ['Arduino', 'IR Sensor Array', 'PID-free Control', '90° Turning Ability', 'Line Detection', 'Autonomous Robotics'],
   },
   {
     id: 'proj-vacuum-cleaner',
     title: 'Autonomous Vacuum Cleaner with Obstacle and Fall Avoidance',
     subtitle: 'Hobby Project',
     category: 'Robotics & IoT',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Autonomous-Vacuum-Cleaner-with-Obstacle-and-Fall-Avoidance-Using-Arduino',
     description:
-      'Built a smart vacuum cleaner that autonomously navigates and cleans indoor spaces using a set of sensors. It detects obstacles within a 20 cm range using an ultrasonic sensor, stops instantly, and scans both directions via a servo-mounted sensor to select a clear path. An IR sensor enables detection of steep edges and stairs; upon detection, the robot halts, moves backward, and reroutes safely. A high-efficiency dust and dirt suction air pump ensures thorough cleaning of floors, corners, and narrow or under-furniture areas that conventional cleaners cannot reach without manual intervention.',
-    tags: ['Arduino', 'Obstacle Detection & Avoidance', 'IR Cliff Detection', 'Servo Scanning', 'Autonomous'],
+      'Built an autonomous smart vacuum cleaner with Arduino Uno, ultrasonic and IR-based navigation for obstacle and edge detection, enabling safe rerouting and efficient cleaning in tight and hard-to-reach indoor spaces via air suction. ',
+    tags: ['Arduino', 'Obstacle Detection & Avoidance', 'IR Cliff Detection', 'Servo Scanning', 'Autonomous Robotics'],
   },
   {
     id: 'proj-obstacle-avoiding-car',
     title: 'Obstacle Avoiding Car',
     subtitle: 'CSE350: Digital Electronics & Pulse Techniques | Solo Project',
     category: 'Robotics & IoT',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Hardware-Project_Obstacle-Avoiding-Car-using-Arduino',
     description:
-      'Built an autonomous obstacle-avoiding robotic car using Arduino UNO as a solo project for CSE350: Digital Electronics & Pulse Techniques course.',
-    tags: ['Arduino UNO', 'Obstacle Detection & Avoidance'],
+      'Built an autonomous obstacle-avoiding robotic car using Arduino UNO, ultrasonic sensor, and servo',
+    tags: ['Arduino UNO', 'Obstacle Detection & Avoidance', 'Servo Scanning', 'Autonomous Robotics'],
   },
 
   // 5. Digital Logic Design (4 projects)
@@ -362,19 +363,19 @@ export const projectsList: Project[] = [
     title: '1-bit ALU System',
     subtitle: 'Hobby Project',
     category: 'Digital Logic Design',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/1-bit-ALU-System-with-Carry-in-and-Borrow-in',
     description:
-      'Designed and implemented two versions of a 1-bit ALU using logic gate ICs, multiplexers, NPN transistors, and LEDs, supporting addition, subtraction, and multiplication with carry/borrow input-output functionality.',
-    tags: ['Logic Gates', 'Multiplexers', 'Transistors', 'ALU', 'Hardware Design'],
+      'Designed and implemented two versions of a 1-bit ALU using 7400 series logic gate ICs, multiplexers, NPN transistors, and LEDs, supporting addition, subtraction, and multiplication with carry & borrow input-output functionality.',
+    tags: ['7400 series IC', 'Logic Gates', 'Multiplexers', 'Transistors', '1-bit ALU', 'Hardware Design'],
   },
   {
     id: 'proj-elevator-controller',
     title: 'Elevator Logic Controller',
     subtitle: 'Hobby Project',
     category: 'Digital Logic Design',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl: 'https://github.com/Fathin-Ishrak-Romeo/Elevator-Logic-Controller-using-7400-Series-Logic-Gate-ICs',
     description:
-      'Designed and implemented a combinational digital logic system using 3-bit floor inputs to compare destination and current floors. Controlled Up, Down, and Stop LEDs with mutually exclusive outputs and integrated dual 7-segment displays to indicate floor information using basic logic gates (AND, OR, NOT, NAND, NOR, XNOR).',
+      'Designed and implemented a combinational digital logic system using 3-bit floor inputs to compare destination and current floors. Controlled Up, Down, and Stop LEDs with mutually exclusive outputs and integrated dual 7-segment displays to indicate floor information using 7400 series basic logic gates (AND, OR, NOT, NAND, NOR, XNOR).',
     tags: ['7400 Series ICs', '7-Segment Display', 'Combinational Logic', 'State Control'],
   },
   {
@@ -382,19 +383,19 @@ export const projectsList: Project[] = [
     title: 'Automatic Water Pump System',
     subtitle: 'CSE251: Electronic Devices and Circuits | Group Project (2 members)',
     category: 'Digital Logic Design',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl:,
     description:
       'Built an automatic water pump system using logic gate ICs and MOSFETs (without microcontrollers) that automatically activates when the water level drops below a threshold and shuts off when it exceeds a set limit, with LED indicators displaying real-time water levels.',
-    tags: ['MOSFETs', 'Digital Logic ICs', 'Analog Circuit', 'Automation'],
+    tags: ['7400 Series ICs', 'MOSFETs', 'Analog Circuit', 'Automation'],
   },
   {
     id: 'proj-traffic-management',
     title: 'Automatic Blind Turn Traffic Management System',
     subtitle: 'CSE260: Digital Logic Design | Group Project (4 members)',
     category: 'Digital Logic Design',
-    githubUrl: 'https://github.com/fathin-ishrak-romeo',
+    githubUrl:,
     description:
-      'Designed an automatic traffic management system as a solo project for CSE260: Digital Logic Design course using logic gate ICs (without microcontrollers) for blind turns on hilly roads. The system detects approaching vehicles and activates red indicators on the opposite side to warn incoming traffic, while green LEDs signal when the road is clear and safe to pass.',
-    tags: ['Digital Logic Design', 'Logic Gate ICs', 'Sensors', 'Safety Systems'],
+      'Designed an automatic traffic management system using logic gate ICs (without microcontrollers) for blind turns on hilly roads. The system detects approaching vehicles and activates red indicators on the opposite side to warn incoming traffic, while green LEDs signal when the road is clear and safe to pass.',
+    tags: ['7400 Series ICs', 'Logic Gate', 'Sensors', 'Safety Systems'],
   },
 ];
