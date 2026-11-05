@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=./" />
+    <title>Redirecting...</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      var path = window.location.pathname;
+      if (path.indexOf('/docs') !== -1) {
+        window.location.replace('/docs/');
+      } else {
+        window.location.replace('./');
+      }
+    </script>
+  </head>
+  <body style="background-color: #0b0f19; color: #fff; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <p>Redirecting to portfolio...</p>
+  </body>
+</html>
